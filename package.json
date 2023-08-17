@@ -1,0 +1,27 @@
+{
+  "name": "namaste-react-revision",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start" : "parcel index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aadish2210/namaste-react-practice.git"
+  },
+  "author": "Aadish",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aadish2210/namaste-react-practice/issues"
+  },
+  "homepage": "https://github.com/aadish2210/namaste-react-practice#readme",
+  "devDependencies": {
+    "parcel": "^2.9.3",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

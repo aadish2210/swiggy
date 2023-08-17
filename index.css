@@ -1,3 +1,46 @@
-h1{
-    color: blueviolet;
+.header{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+}
+
+ul{
+    display: flex;
+    list-style-type: none;
+}
+li{
+    padding: 20px;
+    font-size: 20px;
+}
+.logo{
+    width: 180px;
+}
+.res-img{
+    width: 100%;
+}
+.res-card{
+    background-color:#f0f0f0 ;
+    margin : 5px;
+    width: 200px;
+    align-items: center ;
+}
+.res-card:hover{
+    border: 1px solid black;
+    cursor: pointer;    
+}
+
+.res-details{
+    margin: 5px;
+}
+body{
+    padding: 5px;
+}
+
+.search{
+    margin-top: 5px;
+
+}
+.res-container{
+    display: flex;
+    flex-wrap: wrap;
 }
