@@ -37,7 +37,9 @@ body{
 }
 
 .search{
+    display: flex;
     margin-top: 5px;
+    gap: 10px;
 
 }
 .res-container{
