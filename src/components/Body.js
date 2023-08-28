@@ -8,24 +8,34 @@ const Body = ()=>{
         const json = await data.json();
         console.log(json)
         setListOfRestaurants(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        setFilteredRestaurants(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
         console.log(listOfRestaurants)
     }
     const [listOfRestaurants , setListOfRestaurants] = React.useState([]);
-    
-    if(listOfRestaurants?.length==0){
+    const [filteredRestaurants , setFilteredRestaurants] = React.useState([])
+
+    const [searchText , setSearchText] = React.useState("")
+    if(filteredRestaurants?.length==0){
         return <Shimmer />
     }
     return(
         <div className="body">
             <div className="search">
-                <input placeholder="Search"></input>
+                <input placeholder="Search" value={searchText} onChange={(anything)=> setSearchText(anything.target.value)}></input>
+                <button onClick={()=>{
+                    const filteredRestaurants =listOfRestaurants.filter((res) => res.info.name.toLowerCase().includes(searchText.toLowerCase()))
+                    setFilteredRestaurants(filteredRestaurants)
+                }}>Search</button>
+                <button onClick={()=>{
+                    setFilteredRestaurants(listOfRestaurants)
+                }}>Reset</button>
                 <button onClick={()=>{
                     const filteredRestaurants = listOfRestaurants.filter((res)=>res?.info?.avgRating >= 4)
-                    setListOfRestaurants(filteredRestaurants)
+                    setFilteredRestaurants(filteredRestaurants)
                 }}>Top Rated Restaurants</button>
             </div>
             <div className="res-container">
-            {listOfRestaurants?.map((res) => <RestaurantCard key={res?.info?.parentId} resList={res} />)}
+            {filteredRestaurants?.map((res) => <RestaurantCard key={res?.info?.parentId} resList={res} />)}
             </div>
         </div>
     )
