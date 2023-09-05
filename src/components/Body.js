@@ -1,6 +1,8 @@
 import RestaurantCard from "./ResCard";
 import React , {useEffect} from "react";
 import Shimmer from "./Shimmer"
+import useOnlineStatus from "../utils/useOnlineStatus";
+
 const Body = ()=>{
     useEffect(()=>{fetchData()} , [])
     const fetchData = async ()=>{
@@ -15,9 +17,15 @@ const Body = ()=>{
     const [filteredRestaurants , setFilteredRestaurants] = React.useState([])
 
     const [searchText , setSearchText] = React.useState("")
+    
+    if(!useOnlineStatus()){
+        return <h1>Looks Like you're offline!</h1>
+    }
+
     if(filteredRestaurants?.length==0){
         return <Shimmer />
     }
+
     return(
         <div className="body">
             <div className="search">
