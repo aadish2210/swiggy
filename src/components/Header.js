@@ -20,6 +20,7 @@ const Header = () =>{
                 <li><Link to="/about" style={{color:"black", textDecoration:"none"}}>About Us</Link></li>
                 <li><Link to="/contact" style={{color:"black", textDecoration:"none"}}>Contact Us</Link></li>
                 <li>Cart</li>
+                <li><Link to="/lazy" style={{color:"black", textDecoration:"none"}} >Lazy Loading Demo</Link></li>
                 <li><button onClick={changeText}>{text}</button></li>
             </ul>
             </div>
