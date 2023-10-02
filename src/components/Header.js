@@ -9,12 +9,12 @@ const Header = () =>{
     }
 
     return(
-        <div className="header">
+        <div className="header flex justify-between bg-pink-100 shadow-lg m-2 border border-solid border-black">
             <div className="logo-container">
-            <img  className="logo" src={LOGO_URL}/>
+            <img  className="logo w-36 p-2" src={LOGO_URL}/>
             </div>
-            <div className="nav-items">
-            <ul>
+            <div className="nav-items flex items-center">
+            <ul className="flex pr-10 gap-7">
                 <li>Online Status : { useOnlineStatus() ? "✅" : "🔴"}</li>
                 <li><Link to="/" style={{color:"black", textDecoration:"none"}}>Home</Link></li>
                 <li><Link to="/about" style={{color:"black", textDecoration:"none"}}>About Us</Link></li>
